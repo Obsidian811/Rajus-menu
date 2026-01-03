@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "FREDDY'S",
+  title: "AARON'S",
   description: "Made By Jaden",
 };
 

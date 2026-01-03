@@ -20,90 +20,32 @@ type ParentCategory = {
 
 // Define the new, hierarchical categories with Hindi translations
 const parentCategories: ParentCategory[] = [
-  { 
-    id: 'breakfast', 
-    name: 'नाश्ता', 
-    icon: '🍳', 
-    subCategories: [{ id: 'Breakfast', name: 'पूरा दिन नाश्ता' }] // Assuming 'Breakfast' is the category key in Hindi CSV
+  { id: 'chicken',
+    name: 'चिकन',
+    icon: '🍗',
+    subCategories: [{ id: 'Chicken', name: 'सभी चिकन' }]
   },
-  { 
-    id: 'beverage', 
-    name: 'पेय', 
-    icon: '🥤', 
-    subCategories: [{ id: 'Beverage', name: 'सभी पेय' }] // Assuming 'Beverage' is the category key
+{ id: 'chicken shawarma',
+    name: 'चिकन शावरमा',
+    icon: '🌯',
+    subCategories: [{ id: 'Chicken Shawarma', name: 'सभी चिकन शावरमा' }]
   },
-  { 
-    id: 'soup', 
-    name: 'सूप', 
-    icon: '🍲', 
-    subCategories: [
-      { id: 'Soup', name: 'सभी सूप' } // Assuming 'Soup' is the category key
-    ] 
+{ id: 'mutton',
+    name: 'मटन',
+    icon: '🍖',
+    subCategories: [{ id: 'Mutton', name: 'सभी मटन' }]
   },
-  {
-    id: 'special-starters',
-    name: "फ्रेडी के विशेष स्टार्टर",
-    icon: '🍤',
-    subCategories: [
-      { id: 'Special Starters (Veg)', name: 'Veg' },
-      { id: 'Special Starters (Non-veg)', name: 'Non-veg' },
-      { id: 'Special Starters (Seafood)', name: 'SeaFood' },
-    ],
+{ id: 'biryani',
+    name: 'बिरयानी',
+    icon: '🍚',
+    subCategories: [{ id: 'Biryani', name: 'सभी बिरयानी' }]
   },
-  {
-    id: 'chinese-starters',
-    name: 'चाइनीज़ स्टार्टर',
+{ id: 'momos',
+    name: 'मोमोज़',
     icon: '🥟',
-    subCategories: [
-      { id: 'Chinese Starters (Veg)', name: 'Veg' },
-      { id: 'Chinese Starters (Chicken)', name: 'Chicken' },
-      { id: 'Chinese Starters (Mutton)', name: 'Mutton' },
-      { id: 'Chinese Starters (Seafood)', name: 'Seafood' },
-    ],
+    subCategories: [{ id: 'Momos', name: 'सभी मोमोज़' }]
   },
-  {
-    id: 'main-course',
-    name: 'मुख्य कोर्स',
-    icon: '🍛',
-    subCategories: [
-      { id: 'Fish Fry', name: 'फिश फ्राय' },
-      { id: "Freddy's Special", name: "फ्रेडी का विशेष" }, // Note: Keeping 'Freddy's Special' as is in ID
-      { id: 'Biryani', name: 'बिरयानी' },
-      { id: 'Thali', name: 'थाली' },
-    ],
-  },
-  {
-    id: 'chinese-dishes',
-    name: 'चाइनीज़ व्यंजन',
-    icon: '🍜',
-    subCategories: [
-      { id: 'Chinese (Rice)', name: 'चावल' },
-      { id: 'Chinese (Noodles)', name: 'नूडल्स' },
-    ],
-  },
-  {
-    id: 'indian-gravy',
-    name: 'भारतीय ग्रेवी',
-    icon: '🥘',
-    subCategories: [
-      { id: 'Indian Gravy (Veg)', name: 'Veg' },
-      { id: 'Indian Gravy (Chicken)', name: 'Chicken' },
-      { id: 'Indian Gravy (Mutton)', name: 'Mutton' },
-      { id: 'Indian Gravy (Seafood)', name: 'Seafood' },
-    ],
-  },
-  { 
-    id: 'breads', 
-    name: 'रोटी/ब्रेड', 
-    icon: '🫓', 
-    subCategories: [{ id: 'Breads', name: 'रोटी/नान/परोठा' }] 
-  },
-  { 
-    id: 'juice-milkshakes', 
-    name: 'जूस और मिल्कशेक', 
-    icon: '🥛', 
-    subCategories: [{ id: 'Juice & Milkshakes', name: 'सभी ठंडे पेय' }] 
-  },
+
 ];
 
 // Helper function to get the first sub-category ID of a parent category
@@ -122,7 +64,7 @@ export default function HindiMenu() {
   const [selectedItem, setSelectedItem] = useState<MenuItem | null>(null);
 
   const GOOGLE_CSV_URL =
-    "https://docs.google.com/spreadsheets/d/e/2PACX-1vQdPLFc73XvKGEZUYTGjJto0nfXBrt85rIDILZr1lil_-vr_RM_mFg5OgSpyRirX3zVKhNNOs8yy_AH/pub?output=csv&gid=974260879";
+    "https://docs.google.com/spreadsheets/d/e/2PACX-1vTeVv9QsEicZ5EO8ta9VSzVjt1Zw5rH-AqEekpRhMJQrfjjoqlzA3UwJkDU4aK3TNQ0tj6L27DslgKV/pub?output=csv&gid=236523802";
 
   const handleBack = () => {
     sessionStorage.setItem('fromLanguageMenu', 'true');
@@ -194,7 +136,7 @@ export default function HindiMenu() {
 
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-white">
+    <div className="min-h-screen bg-gradient-to-br from-red-900 to-rose-950 text-white">
       
       {/* HEADER */}
       <div className="flex flex-col sm:flex-row sm:justify-center sm:items-center w-full">

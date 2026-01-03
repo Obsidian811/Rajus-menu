@@ -20,90 +20,32 @@ type ParentCategory = {
 
 // Define the new, hierarchical categories with Gujarati translations
 const parentCategories: ParentCategory[] = [
-  { 
-    id: 'breakfast', 
-    name: 'નાસ્તો', 
-    icon: '🍳', 
-    subCategories: [{ id: 'Breakfast', name: 'આખો દિવસ નાસ્તો' }] 
+  { id: 'chicken',
+    name: 'ચિકન',
+    icon: '🍗',
+    subCategories: [{ id: 'Chicken', name: 'બધા ચિકન' }]
   },
-  { 
-    id: 'beverage', 
-    name: 'પીણાં', 
-    icon: '🥤', 
-    subCategories: [{ id: 'Beverage', name: 'તમામ પીણાં' }] 
+{ id: 'chicken shawarma',
+    name: 'ચિકન શાવર્મા',
+    icon: '🌯',
+    subCategories: [{ id: 'Chicken Shawarma', name: 'બધા ચિકન શાવર્મા' }]
   },
-  { 
-    id: 'soup', 
-    name: 'સૂપ', 
-    icon: '🍲', 
-    subCategories: [
-      { id: 'Soup', name: 'તમામ સૂપ' }
-    ] 
+{ id: 'mutton',
+    name: 'મટન',
+    icon: '🍖',
+    subCategories: [{ id: 'Mutton', name: 'બધા મટન' }]
   },
-  {
-    id: 'special-starters',
-    name: "ફ્રેડીના સ્પેશિયલ સ્ટાર્ટર્સ",
-    icon: '🍤',
-    subCategories: [
-      { id: 'Special Starters (Veg)', name: 'Veg' },
-      { id: 'Special Starters (Non-veg)', name: 'Non-veg' },
-      { id: 'Special Starters (Seafood)', name: 'SeaFood' },
-    ],
+{ id: 'biryani',
+    name: 'બિરયાની',
+    icon: '🍚',
+    subCategories: [{ id: 'Biryani', name: 'બધા બિરયાની' }]
   },
-  {
-    id: 'chinese-starters',
-    name: 'ચાઇનીઝ સ્ટાર્ટર્સ',
+{ id: 'momos',
+    name: 'મોમોઝ',
     icon: '🥟',
-    subCategories: [
-      { id: 'Chinese Starters (Veg)', name: 'Veg' },
-      { id: 'Chinese Starters (Chicken)', name: 'Chicken' },
-      { id: 'Chinese Starters (Mutton)', name: 'Mutton' },
-      { id: 'Chinese Starters (Seafood)', name: 'SeaFood' },
-    ],
+    subCategories: [{ id: 'Momos', name: 'બધા મોમોઝ' }]
   },
-  {
-    id: 'main-course',
-    name: 'મેઇન કોર્સ',
-    icon: '🍛',
-    subCategories: [
-      { id: 'Fish Fry', name: 'ફિશ ફ્રાય' },
-      { id: "Freddy's Special", name: "ફ્રેડીનું સ્પેશિયલ" }, 
-      { id: 'Biryani', name: 'બિરયાની' },
-      { id: 'Thali', name: 'થાળી' },
-    ],
-  },
-  {
-    id: 'chinese-dishes',
-    name: 'ચાઇનીઝ વાનગીઓ',
-    icon: '🍜',
-    subCategories: [
-      { id: 'Chinese (Rice)', name: 'ભાત' },
-      { id: 'Chinese (Noodles)', name: 'નૂડલ્સ' },
-    ],
-  },
-  {
-    id: 'indian-gravy',
-    name: 'ભારતીય ગ્રેવી',
-    icon: '🥘',
-    subCategories: [
-      { id: 'Indian Gravy (Veg)', name: 'Veg' },
-      { id: 'Indian Gravy (Chicken)', name: 'Chicken' },
-      { id: 'Indian Gravy (Mutton)', name: 'Mutton' },
-      { id: 'Indian Gravy (Seafood)', name: 'SeaFood' },
-    ],
-  },
-  { 
-    id: 'breads', 
-    name: 'બ્રેડ', 
-    icon: '🫓', 
-    subCategories: [{ id: 'Breads', name: 'રોટી/નાન/પરોઠા' }] 
-  },
-  { 
-    id: 'juice-milkshakes', 
-    name: 'જ્યુસ અને મિલ્કશેક', 
-    icon: '🥛', 
-    subCategories: [{ id: 'Juice & Milkshakes', name: 'તમામ ઠંડા પીણાં' }] 
-  },
+
 ];
 
 const getFirstSubCategory = (parentId: string): string => {
@@ -119,7 +61,7 @@ export default function GujaratiMenu() {
   const [selectedItem, setSelectedItem] = useState<MenuItem | null>(null);
 
   const GOOGLE_CSV_URL =
-    "https://docs.google.com/spreadsheets/d/e/2PACX-1vQdPLFc73XvKGEZUYTGjJto0nfXBrt85rIDILZr1lil_-vr_RM_mFg5OgSpyRirX3zVKhNNOs8yy_AH/pub?output=csv&gid=615183794";
+    "https://docs.google.com/spreadsheets/d/e/2PACX-1vTeVv9QsEicZ5EO8ta9VSzVjt1Zw5rH-AqEekpRhMJQrfjjoqlzA3UwJkDU4aK3TNQ0tj6L27DslgKV/pub?output=csv&gid=663674793";
 
   const handleBack = () => {
     sessionStorage.setItem('fromLanguageMenu', 'true');
@@ -175,7 +117,7 @@ export default function GujaratiMenu() {
 
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-white">
+    <div className="min-h-screen bg-gradient-to-br from-red-900 to-rose-950 text-white">
       
       {/* HEADER */}
       <div className="flex flex-col sm:flex-row sm:justify-center sm:items-center w-full">

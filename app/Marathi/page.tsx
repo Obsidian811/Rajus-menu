@@ -20,90 +20,32 @@ type ParentCategory = {
 
 // Define the new, hierarchical categories with Marathi translations
 const parentCategories: ParentCategory[] = [
-  { 
-    id: 'breakfast', 
-    name: 'ब्रेकफास्ट', 
-    icon: '🍳', 
-    subCategories: [{ id: 'Breakfast', name: 'दिवसभर ब्रेकफास्ट' }] 
+  { id: 'chicken',
+    name: 'चिकन',
+    icon: '🍗',
+    subCategories: [{ id: 'Chicken', name: 'सर्व चिकन' }]
   },
-  { 
-    id: 'beverage', 
-    name: 'पेय', 
-    icon: '🥤', 
-    subCategories: [{ id: 'Beverage', name: 'सर्व पेय' }] 
+{ id: 'chicken shawarma',
+    name: 'चिकन शावरमा',
+    icon: '🌯',
+    subCategories: [{ id: 'Chicken Shawarma', name: 'सर्व चिकन शावरमा' }]
   },
-  { 
-    id: 'soup', 
-    name: 'सूप', 
-    icon: '🍲', 
-    subCategories: [
-      { id: 'Soup', name: 'सर्व सूप' }
-    ] 
+{ id: 'mutton',
+    name: 'मटण',
+    icon: '🍖',
+    subCategories: [{ id: 'Mutton', name: 'सर्व मटण' }]
   },
-  {
-    id: 'special-starters',
-    name: "फ्रेडीचे खास स्टार्टर्स",
-    icon: '🍤',
-    subCategories: [
-      { id: 'Special Starters (Veg)', name: 'Veg' },
-      { id: 'Special Starters (Non-veg)', name: 'Non-veg' },
-      { id: 'Special Starters (Seafood)', name: 'Seafood' },
-    ],
+{ id: 'biryani',
+    name: 'बिर्याणी',
+    icon: '🍚',
+    subCategories: [{ id: 'Biryani', name: 'सर्व बिर्याणी' }]
   },
-  {
-    id: 'chinese-starters',
-    name: 'चायनीज स्टार्टर्स',
+{ id: 'momos',
+    name: 'मोमोज',
     icon: '🥟',
-    subCategories: [
-      { id: 'Chinese Starters (Veg)', name: 'Veg' },
-      { id: 'Chinese Starters (Chicken)', name: 'Chicken' },
-      { id: 'Chinese Starters (Mutton)', name: 'Mutton' },
-      { id: 'Chinese Starters (Seafood)', name: 'Seafood' },
-    ],
+    subCategories: [{ id: 'Momos', name: 'सर्व मोमोज' }]
   },
-  {
-    id: 'main-course',
-    name: 'मुख्य जेवण',
-    icon: '🍛',
-    subCategories: [
-      { id: 'Fish Fry', name: 'फिश फ्राय' },
-      { id: "Freddy's Special", name: "फ्रेडीचे खास" }, 
-      { id: 'Biryani', name: 'बिरयानी' },
-      { id: 'Thali', name: 'थाळी' },
-    ],
-  },
-  {
-    id: 'chinese-dishes',
-    name: 'चायनीज पदार्थ',
-    icon: '🍜',
-    subCategories: [
-      { id: 'Chinese (Rice)', name: 'भात' },
-      { id: 'Chinese (Noodles)', name: 'नूडल्स' },
-    ],
-  },
-  {
-    id: 'indian-gravy',
-    name: 'भारतीय ग्रेव्ही',
-    icon: '🥘',
-    subCategories: [
-      { id: 'Indian Gravy (Veg)', name: 'Veg' },
-      { id: 'Indian Gravy (Chicken)', name: 'Chicken' },
-      { id: 'Indian Gravy (Mutton)', name: 'Mutton' },
-      { id: 'Indian Gravy (Seafood)', name: 'Seafood' },
-    ],
-  },
-  { 
-    id: 'breads', 
-    name: 'पोळी/ब्रेड', 
-    icon: '🫓', 
-    subCategories: [{ id: 'Breads', name: 'रोटी/नान/परोठा' }] 
-  },
-  { 
-    id: 'juice-milkshakes', 
-    name: 'ज्यूस आणि मिल्कशेक', 
-    icon: '🥛', 
-    subCategories: [{ id: 'Juice & Milkshakes', name: 'सर्व थंड पेय' }] 
-  },
+
 ];
 
 const getFirstSubCategory = (parentId: string): string => {
@@ -119,7 +61,7 @@ export default function MarathiMenu() {
   const [selectedItem, setSelectedItem] = useState<MenuItem | null>(null);
 
   const GOOGLE_CSV_URL =
-    "https://docs.google.com/spreadsheets/d/e/2PACX-1vQdPLFc73XvKGEZUYTGjJto0nfXBrt85rIDILZr1lil_-vr_RM_mFg5OgSpyRirX3zVKhNNOs8yy_AH/pub?output=csv&gid=1087523456";
+    "https://docs.google.com/spreadsheets/d/e/2PACX-1vTeVv9QsEicZ5EO8ta9VSzVjt1Zw5rH-AqEekpRhMJQrfjjoqlzA3UwJkDU4aK3TNQ0tj6L27DslgKV/pub?output=csv&gid=740225492";
 
   const handleBack = () => {
     sessionStorage.setItem('fromLanguageMenu', 'true');
@@ -175,7 +117,7 @@ export default function MarathiMenu() {
 
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-white">
+    <div className="min-h-screen bg-gradient-to-br from-red-900 to-rose-950 text-white">
       
       {/* HEADER */}
       <div className="flex flex-col sm:flex-row sm:justify-center sm:items-center w-full">

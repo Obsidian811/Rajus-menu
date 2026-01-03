@@ -61,7 +61,7 @@ export default function Home() {
   };
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-black text-white">
+    <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-red-900 to-rose-950 text-white">
       <div className="w-full max-w-4xl p-8">
         {/* Hotel Name Section */}
         {transition.current === 'hotel' && (
@@ -69,8 +69,8 @@ export default function Home() {
             className="transition-opacity duration-500 ease-in-out text-center"
             style={{ opacity: transition.opacity }}
           >
-            <h1 className="text-6xl font-bold mb-4">FREDDY'S</h1>
-            <p className="text-lg">Authentic South Indian Cuisine</p>
+            <h1 className="text-6xl font-bold mb-4">Aaron'S</h1>
+            <p className="text-lg"></p>
           </div>
         )}
 

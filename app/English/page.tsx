@@ -22,77 +22,35 @@ type ParentCategory = {
 
 // Define the new, hierarchical categories
 const parentCategories: ParentCategory[] = [
-  { id: 'breakfast', 
-    name: 'Breakfast', 
-    icon: '🍳', 
-    subCategories: [{ id: 'Breakfast', name: 'All Day Breakfast' }] 
+  { id: 'chicken', 
+    name: 'Chicken', 
+    icon: '🍗', 
+    subCategories: [{ id: 'Chicken', name: 'All Chicken' }] 
   },
-  { id: 'beverage', 
-    name: 'Beverage', 
-    icon: '🥤', 
-    subCategories: [{ id: 'Beverage', name: 'All Beverages' }] 
+  { id: 'chicken shawarma', 
+    name: 'Chicken Shawarma', 
+    icon: '🌯', 
+    subCategories: [{ id: 'Chicken Shawarma', name: 'All Chicken Shawarma' }] 
   },
-  { id: 'soup', 
-    name: 'Soup', 
-    icon: '🍲', 
+  { id: 'mutton', 
+    name: 'Mutton', 
+    icon: '🍖', 
     subCategories: [
-      { id: 'Soup', name: 'All Soups' }
+      { id: 'Mutton', name: 'All Mutton' }
     ] 
   },
   {
-    id: 'special-starters',
-    name: "Freddy's Special Starters",
-    icon: '🍤',
-    subCategories: [
-      { id: 'Special Starters (Veg)', name: 'Veg' },
-      { id: 'Special Starters (Non-veg)', name: 'Non-veg' },
-      { id: 'Special Starters (Seafood)', name: 'Seafood' },
-    ],
+    id: 'biryani',
+    name: "Biryani",
+    icon: '🍚',
+    subCategories: [{ id: 'Biryani', name: 'All Biryani' }],
   },
   {
-    id: 'chinese-starters',
-    name: 'Chinese Starters',
+    id: 'momos',
+    name: 'Momos',
     icon: '🥟',
-    subCategories: [
-      { id: 'Chinese Starters (Veg)', name: 'Veg' },
-      { id: 'Chinese Starters (Chicken)', name: 'Chicken' },
-      { id: 'Chinese Starters (Mutton)', name: 'Mutton' },
-      { id: 'Chinese Starters (Seafood)', name: 'Seafood' },
-    ],
+    subCategories: [{ id: 'Momos', name: 'All Momos' }],
   },
-  {
-    id: 'main-course',
-    name: 'Main Course',
-    icon: '🍛',
-    subCategories: [
-      { id: 'Fish Fry', name: 'Fish Fry' },
-      { id: "Freddy's Special", name: "Freddy's Special" },
-      { id: 'Biryani', name: 'Biryani' },
-      { id: 'Thali', name: 'Thali' },
-    ],
-  },
-  {
-    id: 'chinese-dishes',
-    name: 'Chinese Dishes',
-    icon: '🍜',
-    subCategories: [
-      { id: 'Chinese (Rice)', name: 'Rice' },
-      { id: 'Chinese (Noodles)', name: 'Noodles' },
-    ],
-  },
-  {
-    id: 'indian-gravy',
-    name: 'Indian Gravy',
-    icon: '🥘',
-    subCategories: [
-      { id: 'Indian Gravy (Veg)', name: 'Veg' },
-      { id: 'Indian Gravy (Chicken)', name: 'Chicken' },
-      { id: 'Indian Gravy (Mutton)', name: 'Mutton' },
-      { id: 'Indian Gravy (Seafood)', name: 'Seafood' },
-    ],
-  },
-  { id: 'breads', name: 'Breads', icon: '🫓', subCategories: [{ id: 'Breads', name: 'Roti/Naan/Parotha' }] },
-  { id: 'juice-milkshakes', name: 'Juice & Milkshakes', icon: '🥛', subCategories: [{ id: 'Juice & Milkshakes', name: 'All Cool Drinks' }] },
 ];
 
 // Helper function to get the first sub-category ID of a parent category
@@ -111,7 +69,7 @@ export default function EnglishMenu() {
   const [selectedItem, setSelectedItem] = useState<MenuItem | null>(null);
 
   const GOOGLE_CSV_URL =
-    "https://docs.google.com/spreadsheets/d/e/2PACX-1vQdPLFc73XvKGEZUYTGjJto0nfXBrt85rIDILZr1lil_-vr_RM_mFg5OgSpyRirX3zVKhNNOs8yy_AH/pub?output=csv";
+    "https://docs.google.com/spreadsheets/d/e/2PACX-1vTeVv9QsEicZ5EO8ta9VSzVjt1Zw5rH-AqEekpRhMJQrfjjoqlzA3UwJkDU4aK3TNQ0tj6L27DslgKV/pub?output=csv";
 
   const handleBack = () => {
     sessionStorage.setItem('fromLanguageMenu', 'true');
@@ -180,7 +138,7 @@ export default function EnglishMenu() {
 
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-white">
+    <div className="min-h-screen bg-gradient-to-br from-red-900 to-rose-950 text-white">
       
       {/* HEADER */}
       <div className="flex flex-col sm:flex-row sm:justify-center sm:items-center w-full">
