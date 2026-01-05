@@ -77,7 +77,7 @@ export default function Home() {
             style={{ opacity: transition.opacity }}
           >
             <h1 className="text-6xl font-bold mb-4">RAJU'S</h1>
-            <p className="text-lg"></p>
+            <p className="text-lg">Snacks and Soda Pub</p>
           </div>
         )}
 
