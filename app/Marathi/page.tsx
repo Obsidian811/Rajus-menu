@@ -25,8 +25,8 @@ const parentCategories: ParentCategory[] = [
     name: 'पेय',
     icon: '🥤',
     subCategories: [
-      { id: 'Fiz Drinks', name: 'सर्व फिज ड्रिंक्स' },
-      { id: 'Float', name: 'सर्व फ्लोट' }
+      { id: 'Fiz Drinks', name: 'फिज ड्रिंक्स' },
+      { id: 'Float', name: 'फ्लोट' }
     ]
   },
   {
@@ -34,53 +34,53 @@ const parentCategories: ParentCategory[] = [
     name: 'कॉफी',
     icon: '☕',
     subCategories: [
-      { id: 'Cold Coffee', name: 'सर्व कोल्ड कॉफी' },
-      { id: 'Hot Coffee', name: 'सर्व हॉट कॉफी' }
+      { id: 'Cold Coffee', name: 'कोल्ड कॉफी' },
+      { id: 'Hot Coffee', name: 'हॉट कॉफी' }
     ]
   },
   {
     id: 'milkshakes',
     name: 'मिल्कशेक',
     icon: '🥛',
-    subCategories: [{ id: 'Milkshakes', name: 'सर्व मिल्कशेक' }]
+    subCategories: [{ id: 'Milkshakes', name: 'मिल्कशेक' }]
   },
   {
     id: 'ice cream',
     name: 'आइसक्रीम',
     icon: '🍦',
-    subCategories: [{ id: 'Ice Cream', name: 'सर्व आइसक्रीम' }]
+    subCategories: [{ id: 'Ice Cream', name: 'आइसक्रीम' }]
   },
   {
     id: 'burger',
     name: 'बर्गर',
     icon: '🍔',
-    subCategories: [{ id: 'Burger', name: 'सर्व बर्गर' }]
+    subCategories: [{ id: 'Burger', name: 'बर्गर' }]
   },
   {
     id: 'sandwiches',
     name: 'सँडविच',
     icon: '🥪',
     subCategories: [
-      { id: 'Soft Bread Sandwich', name: 'सर्व सॉफ्ट ब्रेड सँडविच' },
-      { id: 'Grilled Sandwich', name: 'सर्व वेज ग्रिल्ड सँडविच' },
-      { id: 'Toast Sandwich', name: 'सर्व टोस्ट सँडविच' },
-      { id: 'Chicken Grilled Sandwich', name: 'सर्व चिकन ग्रिल्ड सँडविच' }
+      { id: 'Soft Bread Sandwich', name: 'सॉफ्ट ब्रेड सँडविच' },
+      { id: 'Grilled Sandwich', name: 'वेज ग्रिल्ड सँडविच' },
+      { id: 'Toast Sandwich', name: 'टोस्ट सँडविच' },
+      { id: 'Chicken Grilled Sandwich', name: 'चिकन ग्रिल्ड सँडविच' }
     ]
   },
   {
     id: 'french fires',
     name: 'फ्रेंच फ्राइज',
     icon: '🍟',
-    subCategories: [{ id: 'French Fries', name: 'सर्व फ्रेंच फ्राइज' }]
+    subCategories: [{ id: 'French Fries', name: 'फ्रेंच फ्राइज' }]
   },
   {
     id: 'frankie',
     name: 'फ्रँकी',
     icon: '🌯',
     subCategories: [
-      { id: 'Veg Frankie', name: 'सर्व वेज फ्रँकी' },
-      { id: 'Egg Frankie', name: 'सर्व एग फ्रँकी' },
-      { id: 'Chicken Frankie', name: 'सर्व चिकन फ्रँकी' }
+      { id: 'Veg Frankie', name: 'वेज फ्रँकी' },
+      { id: 'Egg Frankie', name: 'एग फ्रँकी' },
+      { id: 'Chicken Frankie', name: 'चिकन फ्रँकी' }
     ]
   }
 ];

@@ -25,8 +25,8 @@ const parentCategories: ParentCategory[] = [
     name: 'પેય',
     icon: '🥤',
     subCategories: [
-      { id: 'Fiz Drinks', name: 'બધા ફિઝ ડ્રિંક્સ' },
-      { id: 'Float', name: 'બધા ફ્લોટ' }
+      { id: 'Fiz Drinks', name: 'ફિઝ ડ્રિંક્સ' },
+      { id: 'Float', name: 'ફ્લોટ' }
     ]
   },
   {
@@ -34,44 +34,44 @@ const parentCategories: ParentCategory[] = [
     name: 'કોફી',
     icon: '☕',
     subCategories: [
-      { id: 'Cold Coffee', name: 'બધી કોલ્ડ કોફી' },
-      { id: 'Hot Coffee', name: 'બધી હોટ કોફી' }
+      { id: 'Cold Coffee', name: 'કોલ્ડ કોફી' },
+      { id: 'Hot Coffee', name: 'હોટ કોફી' }
     ]
   },
   {
     id: 'milkshakes',
     name: 'મિલ્કશેક',
     icon: '🥛',
-    subCategories: [{ id: 'Milkshakes', name: 'બધા મિલ્કશેક' }]
+    subCategories: [{ id: 'Milkshakes', name: 'મિલ્કશેક' }]
   },
   {
     id: 'ice cream',
     name: 'આઇસક્રીમ',
     icon: '🍦',
-    subCategories: [{ id: 'Ice Cream', name: 'બધી આઇસક્રીમ' }]
+    subCategories: [{ id: 'Ice Cream', name: 'આઇસક્રીમ' }]
   },
   {
     id: 'burger',
     name: 'બર્ગર',
     icon: '🍔',
-    subCategories: [{ id: 'Burger', name: 'બધા બર્ગર' }]
+    subCategories: [{ id: 'Burger', name: 'બર્ગર' }]
   },
   {
     id: 'sandwiches',
     name: 'સેન્ડવિચ',
     icon: '🥪',
     subCategories: [
-      { id: 'Soft Bread Sandwich', name: 'બધા સોફ્ટ બ્રેડ સેન્ડવિચ' },
-      { id: 'Grilled Sandwich', name: 'બધા વેજ ગ્રિલ્ડ સેન્ડવિચ' },
-      { id: 'Toast Sandwich', name: 'બધા ટોસ્ટ સેન્ડવિચ' },
-      { id: 'Chicken Grilled Sandwich', name: 'બધા ચિકન ગ્રિલ્ડ સેન્ડવિચ' }
+      { id: 'Soft Bread Sandwich', name: 'સોફ્ટ બ્રેડ સેન્ડવિચ' },
+      { id: 'Grilled Sandwich', name: 'વેજ ગ્રિલ્ડ સેન્ડવિચ' },
+      { id: 'Toast Sandwich', name: 'ટોસ્ટ સેન્ડવિચ' },
+      { id: 'Chicken Grilled Sandwich', name: 'ચિકન ગ્રિલ્ડ સેન્ડવિચ' }
     ]
   },
   {
     id: 'french fires',
     name: 'ફ્રેન્ચ ફ્રાઇઝ',
     icon: '🍟',
-    subCategories: [{ id: 'French Fries', name: 'બધી ફ્રેન્ચ ફ્રાઇઝ' }]
+    subCategories: [{ id: 'French Fries', name: 'ફ્રેન્ચ ફ્રાઇઝ' }]
   },
   {
     id: 'frankie',
@@ -80,7 +80,7 @@ const parentCategories: ParentCategory[] = [
     subCategories: [
       { id: 'Veg Frankie', name: 'બધી વેજ ફ્રેન્કી' },
       { id: 'Egg Frankie', name: 'બધી એગ ફ્રેન્કી' },
-      { id: 'Chicken Frankie', name: 'બધી ચિકન ફ્રેન્કી' }
+      { id: 'Chicken Frankie', name: 'ચિકન ફ્રેન્કી' }
     ]
   }
 ];

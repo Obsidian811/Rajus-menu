@@ -26,61 +26,61 @@ const parentCategories: ParentCategory[] = [
     name: 'Drinks', 
     icon: '🥤', 
     subCategories: [
-      { id: 'Fiz Drinks', name: 'All Fizz Drinks' },
-      { id: 'Float', name: 'All Float' }
+      { id: 'Fiz Drinks', name: 'Fizz Drinks' },
+      { id: 'Float', name: 'Float' }
     ] 
   },
   { id: 'coffee', 
     name: 'Coffee', 
     icon: '☕', 
     subCategories: [
-      { id: 'Cold Coffee', name: 'All Cold Coffee' },
-      { id: 'Hot Coffee', name: 'All Hot Coffee' }
+      { id: 'Cold Coffee', name: 'Cold Coffee' },
+      { id: 'Hot Coffee', name: 'Hot Coffee' }
     ] 
   },
   {
     id: 'milkshakes',
     name: "Milkshakes",
     icon: '🥛',
-    subCategories: [{ id: 'Milkshakes', name: 'All Milkshakes' }],
+    subCategories: [{ id: 'Milkshakes', name: 'Milkshakes' }],
   },
   {
     id: 'ice cream',
     name: "Ice Cream",
     icon: '🍦',
-    subCategories: [{ id: 'Ice Cream', name: 'All Ice Cream' }],
+    subCategories: [{ id: 'Ice Cream', name: 'Ice Cream' }],
   },
   {
     id: 'burger',
     name: 'Burgers',
     icon: '🍔',
-    subCategories: [{ id: 'Burger', name: 'All Burgers' }],
+    subCategories: [{ id: 'Burger', name: 'Burgers' }],
   },
   {
     id: 'sandwiches',
     name: 'Sandwiches',
     icon: '🥪',
     subCategories: [
-      { id: 'Soft Bread Sandwich', name: 'All Soft Bread Sandwiches' },
-      {id: 'Grilled Sandwich', name: 'All Veg Grilled Sandwiches' },
-      {id: 'Toast Sandwich', name: 'All Toast Sandwiches'},
-      {id: 'Chicken Grilled Sandwich', name: 'All Chicken Grilled Sandwiches' }
+      { id: 'Soft Bread Sandwich', name: 'Soft Bread Sandwiches' },
+      {id: 'Grilled Sandwich', name: 'Veg Grilled Sandwiches' },
+      {id: 'Toast Sandwich', name: 'Toast Sandwiches'},
+      {id: 'Chicken Grilled Sandwich', name: 'Chicken Grilled Sandwiches' }
     ],
   },
   {
     id: 'french fires',
     name: 'French Fries',
     icon: '🍟',
-    subCategories: [{ id: 'French Fries', name: 'All French Fries' }],
+    subCategories: [{ id: 'French Fries', name: 'French Fries' }],
   },
   {
     id: 'frankie',
     name: 'Frankie',
     icon: '🌯',
     subCategories: [
-      { id: 'Veg Frankie', name: 'All Veg Frankie' },
-      { id: 'Egg Frankie', name: 'All Egg Frankie' },
-      { id: 'Chicken Frankie', name: 'All Chicken Frankie' },
+      { id: 'Veg Frankie', name: 'Veg Frankie' },
+      { id: 'Egg Frankie', name: 'Egg Frankie' },
+      { id: 'Chicken Frankie', name: 'Chicken Frankie' },
 
     ],
   },

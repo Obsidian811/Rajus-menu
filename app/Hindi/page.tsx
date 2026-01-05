@@ -25,8 +25,8 @@ const parentCategories: ParentCategory[] = [
   name: 'पेय',
   icon: '🥤',
   subCategories: [
-    { id: 'Fiz Drinks', name: 'सभी फिज ड्रिंक्स' },
-    { id: 'Float', name: 'सभी फ्लोट' }
+    { id: 'Fiz Drinks', name: 'फिज ड्रिंक्स' },
+    { id: 'Float', name: 'फ्लोट' }
   ]
 },
 {
@@ -34,53 +34,53 @@ const parentCategories: ParentCategory[] = [
   name: 'कॉफी',
   icon: '☕',
   subCategories: [
-    { id: 'Cold Coffee', name: 'सभी कोल्ड कॉफी' },
-    { id: 'Hot Coffee', name: 'सभी हॉट कॉफी' }
+    { id: 'Cold Coffee', name: 'कोल्ड कॉफी' },
+    { id: 'Hot Coffee', name: 'हॉट कॉफी' }
   ]
 },
 {
   id: 'milkshakes',
   name: 'मिल्कशेक',
   icon: '🥛',
-  subCategories: [{ id: 'Milkshakes', name: 'सभी मिल्कशेक' }]
+  subCategories: [{ id: 'Milkshakes', name: 'मिल्कशेक' }]
 },
 {
   id: 'ice cream',
   name: 'आइसक्रीम',
   icon: '🍦',
-  subCategories: [{ id: 'Ice Cream', name: 'सभी आइसक्रीम' }]
+  subCategories: [{ id: 'Ice Cream', name: 'आइसक्रीम' }]
 },
 {
   id: 'burger',
   name: 'बर्गर',
   icon: '🍔',
-  subCategories: [{ id: 'Burger', name: 'सभी बर्गर' }]
+  subCategories: [{ id: 'Burger', name: 'बर्गर' }]
 },
 {
   id: 'sandwiches',
   name: 'सैंडविच',
   icon: '🥪',
   subCategories: [
-      { id: 'Soft Bread Sandwich', name: 'सभी सॉफ्ट ब्रेड सैंडविच' },
-      { id: 'Grilled Sandwich', name: 'सभी वेज ग्रिल्ड सैंडविच' },
-      { id: 'Toast Sandwich', name: 'सभी टोस्ट सैंडविच' },
-      { id: 'Chicken Grilled Sandwich', name: 'सभी चिकन ग्रिल्ड सैंडविच' }
+      { id: 'Soft Bread Sandwich', name: 'सॉफ्ट ब्रेड सैंडविच' },
+      { id: 'Grilled Sandwich', name: 'वेज ग्रिल्ड सैंडविच' },
+      { id: 'Toast Sandwich', name: 'टोस्ट सैंडविच' },
+      { id: 'Chicken Grilled Sandwich', name: 'चिकन ग्रिल्ड सैंडविच' }
     ]
   },
   {
     id: 'french fires',
     name: 'फ्रेंच फ्राइज',
     icon: '🍟',
-    subCategories: [{ id: 'French Fries', name: 'सभी फ्रेंच फ्राइज' }]
+    subCategories: [{ id: 'French Fries', name: 'फ्रेंच फ्राइज' }]
   },
   {
     id: 'frankie',
     name: 'फ्रैंकी',
     icon: '🌯',
     subCategories: [
-      { id: 'Veg Frankie', name: 'सभी वेज फ्रैंकी' },
-      { id: 'Egg Frankie', name: 'सभी एग फ्रैंकी' },
-      { id: 'Chicken Frankie', name: 'सभी चिकन फ्रैंकी' }
+      { id: 'Veg Frankie', name: 'वेज फ्रैंकी' },
+      { id: 'Egg Frankie', name: 'एग फ्रैंकी' },
+      { id: 'Chicken Frankie', name: 'चिकन फ्रैंकी' }
     ]
   }
 ];
