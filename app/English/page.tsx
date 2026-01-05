@@ -22,34 +22,67 @@ type ParentCategory = {
 
 // Define the new, hierarchical categories
 const parentCategories: ParentCategory[] = [
-  { id: 'chicken', 
-    name: 'Chicken', 
-    icon: '🍗', 
-    subCategories: [{ id: 'Chicken', name: 'All Chicken' }] 
-  },
-  { id: 'chicken shawarma', 
-    name: 'Chicken Shawarma', 
-    icon: '🌯', 
-    subCategories: [{ id: 'Chicken Shawarma', name: 'All Chicken Shawarma' }] 
-  },
-  { id: 'mutton', 
-    name: 'Mutton', 
-    icon: '🍖', 
+  { id: 'drinks', 
+    name: 'Drinks', 
+    icon: '🥤', 
     subCategories: [
-      { id: 'Mutton', name: 'All Mutton' }
+      { id: 'Fiz Drinks', name: 'All Fizz Drinks' },
+      { id: 'Float', name: 'All Float' }
+    ] 
+  },
+  { id: 'coffee', 
+    name: 'Coffee', 
+    icon: '☕', 
+    subCategories: [
+      { id: 'Cold Coffee', name: 'All Cold Coffee' },
+      { id: 'Hot Coffee', name: 'All Hot Coffee' }
     ] 
   },
   {
-    id: 'biryani',
-    name: "Biryani",
-    icon: '🍚',
-    subCategories: [{ id: 'Biryani', name: 'All Biryani' }],
+    id: 'milkshakes',
+    name: "Milkshakes",
+    icon: '🥛',
+    subCategories: [{ id: 'Milkshakes', name: 'All Milkshakes' }],
   },
   {
-    id: 'momos',
-    name: 'Momos',
-    icon: '🥟',
-    subCategories: [{ id: 'Momos', name: 'All Momos' }],
+    id: 'ice cream',
+    name: "Ice Cream",
+    icon: '🍦',
+    subCategories: [{ id: 'Ice Cream', name: 'All Ice Cream' }],
+  },
+  {
+    id: 'burger',
+    name: 'Burgers',
+    icon: '🍔',
+    subCategories: [{ id: 'Burger', name: 'All Burgers' }],
+  },
+  {
+    id: 'sandwiches',
+    name: 'Sandwiches',
+    icon: '🥪',
+    subCategories: [
+      { id: 'Soft Bread Sandwich', name: 'All Soft Bread Sandwiches' },
+      {id: 'Grilled Sandwich', name: 'All Veg Grilled Sandwiches' },
+      {id: 'Toast Sandwich', name: 'All Toast Sandwiches'},
+      {id: 'Chicken Grilled Sandwich', name: 'All Chicken Grilled Sandwiches' }
+    ],
+  },
+  {
+    id: 'french fires',
+    name: 'French Fries',
+    icon: '🍟',
+    subCategories: [{ id: 'French Fries', name: 'All French Fries' }],
+  },
+  {
+    id: 'frankie',
+    name: 'Frankie',
+    icon: '🌯',
+    subCategories: [
+      { id: 'Veg Frankie', name: 'All Veg Frankie' },
+      { id: 'Egg Frankie', name: 'All Egg Frankie' },
+      { id: 'Chicken Frankie', name: 'All Chicken Frankie' },
+
+    ],
   },
 ];
 
@@ -69,7 +102,7 @@ export default function EnglishMenu() {
   const [selectedItem, setSelectedItem] = useState<MenuItem | null>(null);
 
   const GOOGLE_CSV_URL =
-    "https://docs.google.com/spreadsheets/d/e/2PACX-1vTeVv9QsEicZ5EO8ta9VSzVjt1Zw5rH-AqEekpRhMJQrfjjoqlzA3UwJkDU4aK3TNQ0tj6L27DslgKV/pub?output=csv";
+    "https://docs.google.com/spreadsheets/d/e/2PACX-1vSU3feEUr0Rekmp_o-x5zoaH-1X9KQbNqAgRFQhuJ1brX_ygTVhLDfIujd3DC4HsE7xMBNWuu0UeUr_/pub?output=csv";
 
   const handleBack = () => {
     sessionStorage.setItem('fromLanguageMenu', 'true');

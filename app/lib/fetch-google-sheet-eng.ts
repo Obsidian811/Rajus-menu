@@ -4,7 +4,7 @@ import { MenuItem } from "./types";
 export async function fetchMenuFromGoogleSheet(sheetUrl: string): Promise<MenuItem[]> {
   try {
     const res = await fetch(
-      "https://docs.google.com/spreadsheets/d/e/2PACX-1vTeVv9QsEicZ5EO8ta9VSzVjt1Zw5rH-AqEekpRhMJQrfjjoqlzA3UwJkDU4aK3TNQ0tj6L27DslgKV/pub?output=csv",
+      "https://docs.google.com/spreadsheets/d/e/2PACX-1vSU3feEUr0Rekmp_o-x5zoaH-1X9KQbNqAgRFQhuJ1brX_ygTVhLDfIujd3DC4HsE7xMBNWuu0UeUr_/pub?output=csv",
       { cache: "no-store" }
     );
     
