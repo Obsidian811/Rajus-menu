@@ -158,6 +158,11 @@ export default function MarathiMenu() {
       
       {/* HEADER */}
       <div className="flex flex-col sm:flex-row sm:justify-center sm:items-center w-full">
+
+        <h1 className=" text-3xl font-bold text-left -rotate-20 text-yellow-400 sm:fixed sm:top-4 sm:left-4 sm:mx-0 sm:mt-2 sm:mb-0">
+          Raju's
+        </h1>
+        
         <h1 className="pt-5 text-5xl font-bold mb-4 text-center bg-gradient-to-r from-amber-200 to-yellow-400 text-transparent bg-clip-text sm:mb-8 sm:w-auto">
           आमचा मेनू
         </h1>
