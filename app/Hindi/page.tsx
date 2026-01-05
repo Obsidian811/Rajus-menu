@@ -20,32 +20,69 @@ type ParentCategory = {
 
 // Define the new, hierarchical categories with Hindi translations
 const parentCategories: ParentCategory[] = [
-  { id: 'chicken',
-    name: 'चिकन',
-    icon: '🍗',
-    subCategories: [{ id: 'Chicken', name: 'सभी चिकन' }]
+  {
+  id: 'drinks',
+  name: 'पेय',
+  icon: '🥤',
+  subCategories: [
+    { id: 'Fiz Drinks', name: 'सभी फिज ड्रिंक्स' },
+    { id: 'Float', name: 'सभी फ्लोट' }
+  ]
+},
+{
+  id: 'coffee',
+  name: 'कॉफी',
+  icon: '☕',
+  subCategories: [
+    { id: 'Cold Coffee', name: 'सभी कोल्ड कॉफी' },
+    { id: 'Hot Coffee', name: 'सभी हॉट कॉफी' }
+  ]
+},
+{
+  id: 'milkshakes',
+  name: 'मिल्कशेक',
+  icon: '🥛',
+  subCategories: [{ id: 'Milkshakes', name: 'सभी मिल्कशेक' }]
+},
+{
+  id: 'ice cream',
+  name: 'आइसक्रीम',
+  icon: '🍦',
+  subCategories: [{ id: 'Ice Cream', name: 'सभी आइसक्रीम' }]
+},
+{
+  id: 'burger',
+  name: 'बर्गर',
+  icon: '🍔',
+  subCategories: [{ id: 'Burger', name: 'सभी बर्गर' }]
+},
+{
+  id: 'sandwiches',
+  name: 'सैंडविच',
+  icon: '🥪',
+  subCategories: [
+      { id: 'Soft Bread Sandwich', name: 'सभी सॉफ्ट ब्रेड सैंडविच' },
+      { id: 'Grilled Sandwich', name: 'सभी वेज ग्रिल्ड सैंडविच' },
+      { id: 'Toast Sandwich', name: 'सभी टोस्ट सैंडविच' },
+      { id: 'Chicken Grilled Sandwich', name: 'सभी चिकन ग्रिल्ड सैंडविच' }
+    ]
   },
-{ id: 'chicken shawarma',
-    name: 'चिकन शावरमा',
+  {
+    id: 'french fires',
+    name: 'फ्रेंच फ्राइज',
+    icon: '🍟',
+    subCategories: [{ id: 'French Fries', name: 'सभी फ्रेंच फ्राइज' }]
+  },
+  {
+    id: 'frankie',
+    name: 'फ्रैंकी',
     icon: '🌯',
-    subCategories: [{ id: 'Chicken Shawarma', name: 'सभी चिकन शावरमा' }]
-  },
-{ id: 'mutton',
-    name: 'मटन',
-    icon: '🍖',
-    subCategories: [{ id: 'Mutton', name: 'सभी मटन' }]
-  },
-{ id: 'biryani',
-    name: 'बिरयानी',
-    icon: '🍚',
-    subCategories: [{ id: 'Biryani', name: 'सभी बिरयानी' }]
-  },
-{ id: 'momos',
-    name: 'मोमोज़',
-    icon: '🥟',
-    subCategories: [{ id: 'Momos', name: 'सभी मोमोज़' }]
-  },
-
+    subCategories: [
+      { id: 'Veg Frankie', name: 'सभी वेज फ्रैंकी' },
+      { id: 'Egg Frankie', name: 'सभी एग फ्रैंकी' },
+      { id: 'Chicken Frankie', name: 'सभी चिकन फ्रैंकी' }
+    ]
+  }
 ];
 
 // Helper function to get the first sub-category ID of a parent category
@@ -64,7 +101,7 @@ export default function HindiMenu() {
   const [selectedItem, setSelectedItem] = useState<MenuItem | null>(null);
 
   const GOOGLE_CSV_URL =
-    "https://docs.google.com/spreadsheets/d/e/2PACX-1vTeVv9QsEicZ5EO8ta9VSzVjt1Zw5rH-AqEekpRhMJQrfjjoqlzA3UwJkDU4aK3TNQ0tj6L27DslgKV/pub?output=csv&gid=236523802";
+    "https://docs.google.com/spreadsheets/d/e/2PACX-1vSU3feEUr0Rekmp_o-x5zoaH-1X9KQbNqAgRFQhuJ1brX_ygTVhLDfIujd3DC4HsE7xMBNWuu0UeUr_/pub?output=csv&gid=996455318";
 
   const handleBack = () => {
     sessionStorage.setItem('fromLanguageMenu', 'true');

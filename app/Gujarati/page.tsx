@@ -20,32 +20,69 @@ type ParentCategory = {
 
 // Define the new, hierarchical categories with Gujarati translations
 const parentCategories: ParentCategory[] = [
-  { id: 'chicken',
-    name: 'ચિકન',
-    icon: '🍗',
-    subCategories: [{ id: 'Chicken', name: 'બધા ચિકન' }]
+  {
+    id: 'drinks',
+    name: 'પેય',
+    icon: '🥤',
+    subCategories: [
+      { id: 'Fiz Drinks', name: 'બધા ફિઝ ડ્રિંક્સ' },
+      { id: 'Float', name: 'બધા ફ્લોટ' }
+    ]
   },
-{ id: 'chicken shawarma',
-    name: 'ચિકન શાવર્મા',
+  {
+    id: 'coffee',
+    name: 'કોફી',
+    icon: '☕',
+    subCategories: [
+      { id: 'Cold Coffee', name: 'બધી કોલ્ડ કોફી' },
+      { id: 'Hot Coffee', name: 'બધી હોટ કોફી' }
+    ]
+  },
+  {
+    id: 'milkshakes',
+    name: 'મિલ્કશેક',
+    icon: '🥛',
+    subCategories: [{ id: 'Milkshakes', name: 'બધા મિલ્કશેક' }]
+  },
+  {
+    id: 'ice cream',
+    name: 'આઇસક્રીમ',
+    icon: '🍦',
+    subCategories: [{ id: 'Ice Cream', name: 'બધી આઇસક્રીમ' }]
+  },
+  {
+    id: 'burger',
+    name: 'બર્ગર',
+    icon: '🍔',
+    subCategories: [{ id: 'Burger', name: 'બધા બર્ગર' }]
+  },
+  {
+    id: 'sandwiches',
+    name: 'સેન્ડવિચ',
+    icon: '🥪',
+    subCategories: [
+      { id: 'Soft Bread Sandwich', name: 'બધા સોફ્ટ બ્રેડ સેન્ડવિચ' },
+      { id: 'Grilled Sandwich', name: 'બધા વેજ ગ્રિલ્ડ સેન્ડવિચ' },
+      { id: 'Toast Sandwich', name: 'બધા ટોસ્ટ સેન્ડવિચ' },
+      { id: 'Chicken Grilled Sandwich', name: 'બધા ચિકન ગ્રિલ્ડ સેન્ડવિચ' }
+    ]
+  },
+  {
+    id: 'french fires',
+    name: 'ફ્રેન્ચ ફ્રાઇઝ',
+    icon: '🍟',
+    subCategories: [{ id: 'French Fries', name: 'બધી ફ્રેન્ચ ફ્રાઇઝ' }]
+  },
+  {
+    id: 'frankie',
+    name: 'ફ્રેન્કી',
     icon: '🌯',
-    subCategories: [{ id: 'Chicken Shawarma', name: 'બધા ચિકન શાવર્મા' }]
-  },
-{ id: 'mutton',
-    name: 'મટન',
-    icon: '🍖',
-    subCategories: [{ id: 'Mutton', name: 'બધા મટન' }]
-  },
-{ id: 'biryani',
-    name: 'બિરયાની',
-    icon: '🍚',
-    subCategories: [{ id: 'Biryani', name: 'બધા બિરયાની' }]
-  },
-{ id: 'momos',
-    name: 'મોમોઝ',
-    icon: '🥟',
-    subCategories: [{ id: 'Momos', name: 'બધા મોમોઝ' }]
-  },
-
+    subCategories: [
+      { id: 'Veg Frankie', name: 'બધી વેજ ફ્રેન્કી' },
+      { id: 'Egg Frankie', name: 'બધી એગ ફ્રેન્કી' },
+      { id: 'Chicken Frankie', name: 'બધી ચિકન ફ્રેન્કી' }
+    ]
+  }
 ];
 
 const getFirstSubCategory = (parentId: string): string => {
@@ -61,7 +98,7 @@ export default function GujaratiMenu() {
   const [selectedItem, setSelectedItem] = useState<MenuItem | null>(null);
 
   const GOOGLE_CSV_URL =
-    "https://docs.google.com/spreadsheets/d/e/2PACX-1vTeVv9QsEicZ5EO8ta9VSzVjt1Zw5rH-AqEekpRhMJQrfjjoqlzA3UwJkDU4aK3TNQ0tj6L27DslgKV/pub?output=csv&gid=663674793";
+    "https://docs.google.com/spreadsheets/d/e/2PACX-1vSU3feEUr0Rekmp_o-x5zoaH-1X9KQbNqAgRFQhuJ1brX_ygTVhLDfIujd3DC4HsE7xMBNWuu0UeUr_/pub?gid=899101026&single=true&output=csv";
 
   const handleBack = () => {
     sessionStorage.setItem('fromLanguageMenu', 'true');
