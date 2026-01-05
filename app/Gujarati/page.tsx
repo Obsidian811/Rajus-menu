@@ -266,7 +266,7 @@ export default function GujaratiMenu() {
 
           {categoryItems.length === 0 && (
             <p className="text-center text-gray-400 py-10 text-lg">
-              **{currentSubCategories.find(sub => sub.id === selectedSubCategory)?.name || selectedSubCategory}** વિભાગમાં કોઈ આઇટમ મળ્યો નથી.
+              Select a category to view menu items
             </p>
           )}
         </div>

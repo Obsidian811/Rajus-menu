@@ -284,7 +284,7 @@ export default function EnglishMenu() {
 
           {categoryItems.length === 0 && (
             <p className="text-center text-gray-400 py-10 text-lg">
-              No items found in the **{selectedSubCategory}** section.
+              Select a category to view menu items
             </p>
           )}
         </div>
