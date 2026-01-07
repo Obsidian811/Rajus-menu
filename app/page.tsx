@@ -68,7 +68,7 @@ export default function Home() {
   };
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-red-900 to-rose-950 text-white">
+    <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-orange-200 to-amber-200 text-white">
       <div className="w-full max-w-4xl p-8">
         {/* Hotel Name Section */}
         {transition.current === 'hotel' && (
@@ -76,8 +76,8 @@ export default function Home() {
             className="transition-opacity duration-500 ease-in-out text-center"
             style={{ opacity: transition.opacity }}
           >
-            <h1 className="text-6xl font-bold mb-4">RAJU'S</h1>
-            <p className="text-lg">Snacks and Soda Pub</p>
+            <h1 className="text-6xl font-bold mb-4 text-blue-950">RAJU'S</h1>
+            <p className="text-lg text-blue-950">Snacks and Soda Pub</p>
           </div>
         )}
 
@@ -105,29 +105,29 @@ export default function Home() {
             className="transition-opacity duration-500 ease-in-out"
             style={{ opacity: transition.opacity }}
           >
-            <h2 className="text-4xl font-bold text-center mb-8">Choose Your Language</h2>
+            <h2 className="text-4xl font-bold text-center mb-8 text-black">Choose Your Language</h2>
             <div className="grid grid-cols-2 gap-6">
               <button
                 onClick={() => handleLanguageSelect('English')}
-                className="p-6 text-xl font-semibold bg-white text-black rounded-lg hover:bg-gray-200 transition-colors"
+                className="p-6 text-xl font-semibold bg-black text-white rounded-lg hover:bg-gray-500 transition-colors"
               >
                 English
               </button>
               <button
                 onClick={() => handleLanguageSelect('Hindi')}
-                className="p-6 text-xl font-semibold bg-white text-black rounded-lg hover:bg-gray-200 transition-colors"
+                className="p-6 text-xl font-semibold bg-black text-white rounded-lg hover:bg-gray-500 transition-colors"
               >
                 हिंदी
               </button>
               <button
                 onClick={() => handleLanguageSelect('Gujarati')}
-                className="p-6 text-xl font-semibold bg-white text-black rounded-lg hover:bg-gray-200 transition-colors"
+                className="p-6 text-xl font-semibold bg-black text-white rounded-lg hover:bg-gray-500 transition-colors"
               >
                 ગુજરાતી
               </button>
               <button
                 onClick={() => handleLanguageSelect('Marathi')}
-                className="p-6 text-xl font-semibold bg-white text-black rounded-lg hover:bg-gray-200 transition-colors"
+                className="p-6 text-xl font-semibold bg-black text-white rounded-lg hover:bg-gray-500 transition-colors"
               >
                 मराठी
               </button>

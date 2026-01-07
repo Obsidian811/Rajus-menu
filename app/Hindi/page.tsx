@@ -173,22 +173,26 @@ export default function HindiMenu() {
 
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-red-900 to-rose-950 text-white">
+    <div className="min-h-screen bg-gradient-to-br from-orange-200 to-amber-200 text-white">
       
       {/* HEADER */}
       <div className="flex flex-col sm:flex-row sm:justify-center sm:items-center w-full">
 
-        <h1 className=" text-3xl font-bold text-left -rotate-20 text-yellow-400 sm:fixed sm:top-4 sm:left-4 sm:mx-0 sm:mt-2 sm:mb-0">
+        <h1 className=" text-3xl font-bold text-left -rotate-20 text-blue-800 sm:fixed sm:top-4 sm:left-4 sm:mx-0 sm:mt-2 sm:mb-0">
           Raju's
         </h1>
 
-        <h1 className="pt-5 text-5xl font-bold mb-4 text-center bg-gradient-to-r from-amber-200 to-yellow-400 text-transparent bg-clip-text sm:mb-8 sm:w-auto">
+        <h1 className="pt-5 text-5xl font-bold mb-4 text-center bg-gradient-to-r from-blue-800 to-blue-950 text-transparent bg-clip-text sm:mb-8 sm:w-auto"
+        style={{
+          WebkitTextStroke: '0.5px white',
+        }}
+        >
           हमारा मेनू
         </h1>
 
         <button
           onClick={handleBack}
-          className="mx-auto mb-4 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors z-50 sm:fixed sm:top-4 sm:right-4 sm:mx-0 sm:mb-0"
+          className="mx-auto mb-4 px-4 py-2 bg-blue-800 text-white rounded-md hover:bg-blue-700 transition-colors z-50 sm:fixed sm:top-4 sm:right-4 sm:mx-0 sm:mb-0"
         >
           भाषा चयन पर वापस
         </button>
@@ -205,7 +209,7 @@ export default function HindiMenu() {
                 className={`flex items-center gap-2 px-6 py-3 rounded-full transition-all duration-300 ${
                   selectedCategory === category.id
                     ? 'bg-amber-500 text-white shadow-lg shadow-amber-500/20'
-                    : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
+                    : 'bg-gray-900 text-gray-300 hover:bg-gray-800'
                 }`}
               >
                 <span className="text-xl">{category.icon}</span>
@@ -244,7 +248,12 @@ export default function HindiMenu() {
         <div className="grid grid-cols-1 gap-4">
           {/* Display current sub-category name as a heading */}
           {selectedSubCategory && (
-            <h2 className="text-3xl font-bold text-center text-amber-400 mb-6">
+            <h2 
+            className="text-4xl font-bold text-center text-blue-800 mb-6"
+            style={{
+              WebkitTextStroke: '0.2px white',
+            }}
+            >
                 {currentSubCategories.find(sub => sub.id === selectedSubCategory)?.name}
             </h2>
           )}
