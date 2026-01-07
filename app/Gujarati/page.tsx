@@ -1,24 +1,21 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { MenuItem, MenuCategory } from '../lib/types';
+import { MenuItem } from '../lib/types';
 import { fetchMenuFromGoogleSheet } from '../lib/fetch-google-sheet-guj';
-import Image from 'next/image';
 
-// --- NEW CATEGORY STRUCTURE ---
 type SubCategory = {
-  id: string; // Should match the 'category' field in your Gujarati MenuItem data
-  name: string; // Display name (in Gujarati)
+  id: string;
+  name: string;
 };
 
 type ParentCategory = {
-  id: string; 
-  name: string; // Display name (in Gujarati)
+  id: string;
+  name: string;
   icon: string;
   subCategories: SubCategory[];
 };
 
-// Define the new, hierarchical categories with Gujarati translations
 const parentCategories: ParentCategory[] = [
   {
     id: 'drinks',
@@ -78,8 +75,8 @@ const parentCategories: ParentCategory[] = [
     name: 'ફ્રેન્કી',
     icon: '🌯',
     subCategories: [
-      { id: 'Veg Frankie', name: 'બધી વેજ ફ્રેન્કી' },
-      { id: 'Egg Frankie', name: 'બધી એગ ફ્રેન્કી' },
+      { id: 'Veg Frankie', name: 'વેજ ફ્રેન્કી' },
+      { id: 'Egg Frankie', name: 'એગ ફ્રેન્કી' },
       { id: 'Chicken Frankie', name: 'ચિકન ફ્રેન્કી' }
     ]
   }
@@ -93,35 +90,38 @@ const getFirstSubCategory = (parentId: string): string => {
 export default function GujaratiMenu() {
   const [menuItems, setMenuItems] = useState<MenuItem[]>([]);
   const [categoryItems, setCategoryItems] = useState<MenuItem[]>([]);
-  const [selectedCategory, setSelectedCategory] = useState<string>('breakfast');
-  const [selectedSubCategory, setSelectedSubCategory] = useState<string>(getFirstSubCategory('breakfast'));
-  const [selectedItem, setSelectedItem] = useState<MenuItem | null>(null);
+  const [selectedCategory, setSelectedCategory] = useState('drinks');
+  const [selectedSubCategory, setSelectedSubCategory] = useState(
+    getFirstSubCategory('drinks')
+  );
 
   const GOOGLE_CSV_URL =
-    "https://docs.google.com/spreadsheets/d/e/2PACX-1vSU3feEUr0Rekmp_o-x5zoaH-1X9KQbNqAgRFQhuJ1brX_ygTVhLDfIujd3DC4HsE7xMBNWuu0UeUr_/pub?gid=899101026&single=true&output=csv";
+    'https://docs.google.com/spreadsheets/d/e/2PACX-1vSU3feEUr0Rekmp_o-x5zoaH-1X9KQbNqAgRFQhuJ1brX_ygTVhLDfIujd3DC4HsE7xMBNWuu0UeUr_/pub?gid=899101026&single=true&output=csv';
 
   const handleBack = () => {
     sessionStorage.setItem('fromLanguageMenu', 'true');
     window.location.href = '/';
   };
 
-  // LOAD CSV MENU ITEMS
   useEffect(() => {
     async function loadMenuItems() {
       const items = await fetchMenuFromGoogleSheet(GOOGLE_CSV_URL);
 
       const formatted: MenuItem[] = items
-        .filter((item: any) => (item.language || 'english').toLowerCase() === "gujarati")
+        .filter(
+          (item: any) =>
+            (item.language || 'english').toLowerCase() === 'gujarati'
+        )
         .map((item: any) => ({
           id: String(item.id).trim(),
           name: String(item.name).trim(),
           category: String(item.category).trim(),
           price: Number(item.price) || 0,
           type: String(item.type).toLowerCase().trim() as 'veg' | 'non-veg',
-          description: String(item.description || "").trim(),
-          longDescription: String(item.longDescription || "").trim(),
-          image: String(item.image || "").trim(),
-          language: "Gujarati",
+          description: String(item.description || '').trim(),
+          longDescription: '',
+          image: '',
+          language: 'Gujarati'
         }));
 
       setMenuItems(formatted);
@@ -130,90 +130,81 @@ export default function GujaratiMenu() {
     loadMenuItems();
   }, []);
 
-  // FILTER ITEMS BY SUB-CATEGORY
   useEffect(() => {
-    if (menuItems.length === 0 || !selectedSubCategory) {
-      setCategoryItems([]);
-      return;
-    }
+    if (!selectedSubCategory) return;
 
-    const filtered = menuItems.filter(
-      (item) => item.category.toLowerCase() === selectedSubCategory.toLowerCase()
+    setCategoryItems(
+      menuItems.filter(
+        item =>
+          item.category.toLowerCase() === selectedSubCategory.toLowerCase()
+      )
     );
-
-    setCategoryItems(filtered);
   }, [menuItems, selectedSubCategory]);
 
-  // HANDLE MAIN CATEGORY CHANGE
   const handleCategoryChange = (categoryId: string) => {
     setSelectedCategory(categoryId);
     setSelectedSubCategory(getFirstSubCategory(categoryId));
   };
-  
-  const currentSubCategories = parentCategories.find(p => p.id === selectedCategory)?.subCategories || [];
 
+  const currentSubCategories =
+    parentCategories.find(p => p.id === selectedCategory)?.subCategories || [];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-200 to-amber-200 text-white">
-      
+    <div className="min-h-screen bg-gradient-to-br from-orange-100 to-amber-100 text-black">
+
       {/* HEADER */}
-      <div className="flex flex-col sm:flex-row sm:justify-center sm:items-center w-full">
-        
-        <h1 className=" text-3xl font-bold text-left -rotate-20 text-blue-800 sm:fixed sm:top-4 sm:left-4 sm:mx-0 sm:mt-2 sm:mb-0">
+      <div className="flex flex-col sm:flex-row sm:justify-center sm:items-center w-full relative">
+        <h1
+          className="text-3xl font-bold -rotate-12 text-blue-800 sm:fixed sm:top-4 sm:left-4"
+          style={{ WebkitTextStroke: '1px white' }}
+        >
           Raju's
         </h1>
 
-        <h1 className="pt-5 text-5xl font-bold mb-4 text-center bg-gradient-to-r from-blue-800 to-blue-950 text-transparent bg-clip-text sm:mb-8 sm:w-auto"
-        style={{
-          WebkitTextStroke: '0.5px white',
-        }}
-        >
+        <h1 className="pt-6 text-5xl font-bold text-center text-blue-900">
           અમારું મેનુ
         </h1>
 
         <button
           onClick={handleBack}
-          className="mx-auto mb-4 px-4 py-2 bg-blue-800 text-white rounded-md hover:bg-blue-700 transition-colors z-50 sm:fixed sm:top-4 sm:right-4 sm:mx-0 sm:mb-0"
+          className="mx-auto mt-4 sm:mt-0 sm:fixed sm:top-4 sm:right-4 px-4 py-2 bg-blue-800 text-white rounded-md"
         >
-          ભાષા પસંદગી પર પાછા
+          પાછા જાઓ
         </button>
       </div>
 
-      {/* CATEGORY TABS (Parent Categories) */}
-      <header className="bg-black/30 backdrop-blur-sm sticky top-0 z-10 border-b border-gray-700">
-        <div className="max-w-7xl mx-auto px-4 py-6">
-          <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide">
-            {parentCategories.map((category) => (
+      {/* CATEGORY TABS */}
+      <header className="bg-black/20 backdrop-blur-sm sticky top-0 z-10 mt-6">
+        <div className="max-w-7xl mx-auto px-4 py-4">
+          <div className="flex gap-4 overflow-x-auto scrollbar-hide">
+            {parentCategories.map(category => (
               <button
                 key={category.id}
                 onClick={() => handleCategoryChange(category.id)}
-                className={`flex items-center gap-2 px-6 py-3 rounded-full transition-all duration-300 ${
+                className={`flex items-center gap-2 px-6 py-3 rounded-full ${
                   selectedCategory === category.id
-                    ? 'bg-amber-500 text-white shadow-lg shadow-amber-500/20'
-                    : 'bg-gray-900 text-gray-300 hover:bg-gray-800'
+                    ? 'bg-amber-500 text-white'
+                    : 'bg-gray-800 text-gray-300'
                 }`}
               >
-                <span className="text-xl">{category.icon}</span>
-                <span className="font-medium whitespace-nowrap">
-                  {category.name}
-                </span>
+                <span>{category.icon}</span>
+                <span>{category.name}</span>
               </button>
             ))}
           </div>
         </div>
-        
-        {/* SUB-CATEGORY TABS */}
+
         {currentSubCategories.length > 1 && (
-          <div className="max-w-7xl mx-auto px-4 py-3 border-t border-gray-700 bg-gray-900/50">
-            <div className="flex gap-4 overflow-x-auto pb-2 scrollbar-hide">
-              {currentSubCategories.map((sub) => (
+          <div className="max-w-7xl mx-auto px-4 py-2">
+            <div className="flex gap-3 overflow-x-auto scrollbar-hide">
+              {currentSubCategories.map(sub => (
                 <button
                   key={sub.id}
                   onClick={() => setSelectedSubCategory(sub.id)}
-                  className={`px-4 py-2 rounded-lg transition-all duration-300 text-sm font-medium whitespace-nowrap ${
+                  className={`px-4 py-2 rounded-md text-sm ${
                     selectedSubCategory === sub.id
-                      ? 'bg-blue-600 text-white shadow-md shadow-blue-600/20'
-                      : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+                      ? 'bg-blue-600 text-white'
+                      : 'bg-gray-700 text-gray-300'
                   }`}
                 >
                   {sub.name}
@@ -224,131 +215,47 @@ export default function GujaratiMenu() {
         )}
       </header>
 
-      {/* MENU ITEMS */}
-      <main className="max-w-4xl mx-auto px-4 py-8">
-        <div className="grid grid-cols-1 gap-4">
-          {selectedSubCategory && (
-            <h2 
-            className="text-4xl font-bold text-center text-blue-800 mb-6"
-            style={{
-              WebkitTextStroke: '0.2px white',
-            }}
-            >
-                {currentSubCategories.find(sub => sub.id === selectedSubCategory)?.name}
-            </h2>
-          )}
+      {/* MENU LIST */}
+      <main className="max-w-3xl mx-auto px-4 py-10">
+        <h2 className="text-3xl font-bold text-center text-blue-900 mb-8">
+          {currentSubCategories.find(s => s.id === selectedSubCategory)?.name}
+        </h2>
 
-          {categoryItems.map((item) => (
-            <div
-              key={item.id}
-              className="bg-gray-800 rounded-xl p-6 flex justify-between items-center transition-all duration-300 border border-gray-700 hover:border-amber-500"
-            >
-              <div className="flex-1 min-w-0">
-                <div className="flex items-center mb-2">
-                  <h3 className="text-xl font-semibold mr-3">{item.name}</h3>
-
+        <div className="space-y-5">
+          {categoryItems.map(item => (
+            <div key={item.id} className="flex justify-between items-start">
+              <div>
+                <div className="flex items-center gap-2">
                   <span
-                    className={`px-2 py-0.5 rounded-full text-xs font-medium ${
+                    className={`h-3 w-3 rounded-full ${
                       item.type === 'veg'
-                        ? 'bg-green-500/90 text-white'
-                        : 'bg-red-500/90 text-white'
+                        ? 'bg-green-600'
+                        : 'bg-red-600'
                     }`}
-                  >
-                    {item.type === 'veg' ? 'Veg' : 'Non-veg'}
-                  </span>
+                  />
+                  <h3 className="text-lg font-medium">{item.name}</h3>
                 </div>
 
-                <p className="text-gray-400 mb-2 line-clamp-2">
-                  {item.description}
-                </p>
-
-                <span className="text-xl font-bold text-amber-400">
-                  ₹{item.price.toFixed(2)}
-                </span>
+                {item.description && (
+                  <p className="text-sm text-gray-600 ml-5">
+                    {item.description}
+                  </p>
+                )}
               </div>
 
-              {(item.image || item.longDescription) && (
-                <button
-                  onClick={() => setSelectedItem(item)}
-                  className="ml-6 flex-shrink-0 px-4 py-2 bg-amber-500 text-white rounded-lg hover:bg-amber-600 transition-colors font-medium"
-                >
-                  વિગતો જુઓ
-                </button>
-              )}
+              <span className="text-lg font-semibold">
+                ₹{item.price.toFixed(2)}
+              </span>
             </div>
           ))}
 
           {categoryItems.length === 0 && (
-            <p className="text-center text-gray-400 py-10 text-lg">
-              Select a category to view menu items
+            <p className="text-center text-gray-500">
+              કોઈ વસ્તુ ઉપલબ્ધ નથી
             </p>
           )}
         </div>
       </main>
-
-      {/* ITEM DETAILS MODAL */}
-      {selectedItem && (
-        <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center p-4 z-50">
-          <div className="bg-gray-800 rounded-2xl max-w-3xl w-full overflow-hidden shadow-2xl">
-            {/* Image Container */}
-            {selectedItem.image && selectedItem.image.trim() !== '' ? (
-              <div className="relative h-96 bg-gray-900">
-                <Image
-                  src={selectedItem.image}
-                  alt={selectedItem.name}
-                  fill
-                  className="object-cover"
-                  onError={(e) => {
-                    // Fallback if image fails to load
-                    const img = e.target as HTMLImageElement;
-                    img.style.display = 'none';
-                  }}
-                  priority
-                />
-              </div>
-            ) : (
-              <div className="relative h-96 bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="text-8xl mb-4 opacity-30">📷</div>
-                  <p className="text-gray-400 text-lg">No image available</p>
-                </div>
-              </div>
-            )}
-
-            <button
-              onClick={() => setSelectedItem(null)}
-              className="absolute top-4 right-4 p-2 bg-black/50 hover:bg-black/70 rounded-full text-white transition-colors"
-            >
-              ✕
-            </button>
-
-            <div className="p-8">
-              <div className="flex justify-between items-start mb-4">
-                <h2 className="text-3xl font-bold">{selectedItem.name}</h2>
-
-                <span
-                  className={`px-4 py-1 rounded-full text-sm font-medium ${
-                    selectedItem.type === 'veg'
-                      ? 'bg-green-500/20 text-green-300'
-                      : 'bg-red-500/20 text-red-300'
-                  }`}
-                >
-                  {selectedItem.type === 'veg' ? 'Veg' : 'Non-veg'}
-                </span>
-              </div>
-
-              <p className="text-gray-400 mb-6">
-                {selectedItem.longDescription ||
-                  selectedItem.description}
-              </p>
-
-              <span className="text-3xl font-bold text-amber-400">
-                ₹{selectedItem.price.toFixed(2)}
-              </span>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 }
