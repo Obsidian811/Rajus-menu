@@ -23,7 +23,7 @@ const parentCategories: ParentCategory[] = [
     name: 'Drinks',
     icon: '🥤',
     subCategories: [
-      { id: 'Fiz Drinks', name: 'Fizz Drinks' },
+      { id: 'Fizz Drinks', name: 'Fizz Drinks' },
       { id: 'Float', name: 'Float' }
     ]
   },
