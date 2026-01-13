@@ -1,1 +1,13 @@
-https://script.google.com/macros/s/AKfycbwbx0aXoSGRAwre1dGp74hsn5HpyiEerxD8HD4fn_OJrGhILEaBaqgXODriaIVO1dk5/exec
+Sheet url: 1fdcwoqTrw_or4Y7XhymNgkNfLJ3WVo4oCpUqDE58DQE
+
+
+Details for Vercel:
+
+GOOGLE_SHEET_WEBHOOK
+
+Web app url: https://script.google.com/macros/s/AKfycbwevOAojTQXFqoKCkpymWERCMAh47cx2GL_9xne78450Igsm2KnSzxM-jxe_471xy4J/exec
+
+Note: Visitor counter webhook
+
+
+Apps Web app url: https://script.google.com/macros/s/AKfycbwevOAojTQXFqoKCkpymWERCMAh47cx2GL_9xne78450Igsm2KnSzxM-jxe_471xy4J/exec
