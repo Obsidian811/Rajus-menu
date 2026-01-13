@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Have Some Momos",
+  title: "RAJU'S",
   description: "Made By Jaden",
 };
 
