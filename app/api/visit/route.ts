@@ -2,21 +2,39 @@ import { NextResponse } from "next/server";
 import { cookies } from "next/headers";
 
 export async function POST() {
-  const cookieStore = await cookies(); // 👈 await here
+  try {
+    const cookieStore = await cookies();
 
-  // Prevent recount on refresh
-  if (cookieStore.get("menu_visited")) {
-    return NextResponse.json({ skipped: true });
+    if (cookieStore.get("menu_visited")) {
+      return NextResponse.json({ skipped: true });
+    }
+
+    const webhook = process.env.GOOGLE_SHEET_WEBHOOK;
+
+    if (!webhook) {
+      throw new Error("GOOGLE_SHEET_WEBHOOK is missing");
+    }
+
+    const res = await fetch(webhook, { method: "POST" });
+
+    if (!res.ok) {
+      throw new Error("Webhook request failed");
+    }
+
+    const response = NextResponse.json({ success: true });
+
+    response.cookies.set("menu_visited", "true", {
+      maxAge: 60 * 60 * 6,
+      path: "/",
+    });
+
+    return response;
+  } catch (err: any) {
+    console.error("VISIT API ERROR:", err.message);
+
+    return NextResponse.json(
+      { error: err.message },
+      { status: 500 }
+    );
   }
-
-  await fetch(process.env.GOOGLE_SHEET_WEBHOOK!, {
-    method: "POST",
-  });
-
-  cookieStore.set("menu_visited", "true", {
-    maxAge: 60 * 60 * 6, // 6 hours
-    path: "/",          // good practice
-  });
-
-  return NextResponse.json({ success: true });
 }
