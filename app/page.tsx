@@ -13,6 +13,9 @@ export default function Home() {
   });
 
   useEffect(() => {
+
+    fetch("/api/visit", { method: "POST" });
+
     // Check if we're coming back from a language menu or we've already seen the intro
     const fromLanguageMenu: boolean = sessionStorage.getItem('fromLanguageMenu') === 'true';
     const hasSeenIntro: boolean = sessionStorage.getItem('hasSeenIntro') === 'true';
