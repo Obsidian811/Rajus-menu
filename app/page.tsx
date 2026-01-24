@@ -18,8 +18,14 @@ export default function Home() {
   const hasLoggedRef = useRef(false);
 
   useEffect(() => {
-    fetch("/api/visit", { method: "POST" });
-  }, []);
+    if (hasLoggedRef.current) return;
+
+    hasLoggedRef.current = true;
+
+    fetch("/api/visit", {
+      method: "POST",
+    });
+  } , []);
 
 
   useEffect(() => {
