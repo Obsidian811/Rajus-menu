@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { TransitionState } from './lib/types';
+import { useRef } from "react";
+
 
 export default function Home() {
   const router = useRouter();
@@ -12,9 +14,20 @@ export default function Home() {
     opacity: 0
   });
 
-  useEffect(() => {
 
-    fetch("/api/visit", { method: "POST" });
+  const hasLoggedRef = useRef(false);
+
+useEffect(() => {
+    if (hasLoggedRef.current) return;
+
+    hasLoggedRef.current = true;
+
+    fetch("/api/visit", {
+      method: "POST",
+    });
+  }, []);
+
+  useEffect(() => {
 
     // Check if we're coming back from a language menu or we've already seen the intro
     const fromLanguageMenu: boolean = sessionStorage.getItem('fromLanguageMenu') === 'true';
