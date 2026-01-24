@@ -4,10 +4,8 @@ import { useEffect } from "react";
 
 export default function VisitorTracker() {
   useEffect(() => {
-    console.log("🚀 VisitorTracker mounted");
-
+    // HARD guard: sessionStorage
     const alreadyTracked = sessionStorage.getItem("menu_visited");
-    console.log("alreadyTracked =", alreadyTracked);
 
     if (alreadyTracked) return;
 
@@ -15,10 +13,9 @@ export default function VisitorTracker() {
 
     fetch("/api/visit", {
       method: "POST",
-    })
-      .then(() => console.log("✅ visit API called"))
-      .catch((err) => console.error("❌ visit API error", err));
+      keepalive: true, // important for reliability
+    });
   }, []);
 
-  return null;
+  return null; // invisible
 }

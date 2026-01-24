@@ -1,21 +1,38 @@
-"use client";
+import type { Metadata } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
+import "./globals.css";
+import VisitorTracker from "./components/VisitorTracker";
 
-import { useEffect } from "react";
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
 
-export default function VisitorTracker() {
-  useEffect(() => {
-    // HARD guard: sessionStorage
-    const alreadyTracked = sessionStorage.getItem("menu_visited");
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
 
-    if (alreadyTracked) return;
+export const metadata: Metadata = {
+  title: "RAJU'S",
+  description: "Made By Jaden",
+};
 
-    sessionStorage.setItem("menu_visited", "true");
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en">
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
+        {/* Visitor counter – invisible to users */}
+        <VisitorTracker />
 
-    fetch("/api/visit", {
-      method: "POST",
-      keepalive: true, // important for reliability
-    });
-  }, []);
-
-  return null; // invisible
+        {children}
+      </body>
+    </html>
+  );
 }
