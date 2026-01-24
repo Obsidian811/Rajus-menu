@@ -21,7 +21,7 @@ export async function POST() {
     // Set cookie immediately so duplicate requests won't count
     const response = NextResponse.json({ success: true });
     response.cookies.set("menu_visited", "true", {
-      maxAge: 60 * 60 * 1, // 1 hour
+      maxAge: 60 * 15, // 15 min
       path: "/",
     });
 
