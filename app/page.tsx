@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { TransitionState } from './lib/types';
-import { useRef } from "react";
 
 
 export default function Home() {
@@ -13,19 +12,6 @@ export default function Home() {
     current: 'hotel',
     opacity: 0
   });
-
-
-  const hasLoggedRef = useRef(false);
-
-  useEffect(() => {
-    if (hasLoggedRef.current) return;
-
-    hasLoggedRef.current = true;
-
-    fetch("/api/visit", {
-      method: "POST",
-    });
-  } , []);
 
 
   useEffect(() => {
